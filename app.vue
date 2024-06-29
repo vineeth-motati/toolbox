@@ -9,6 +9,7 @@ const themeOverrides: GlobalThemeOverrides = ThemeOverridesConfig
 <template>
     <NConfigProvider :theme-overrides="themeOverrides">
         <NNotificationProvider placement="bottom-right">
+            <NuxtLoadingIndicator :height="5" />
             <NuxtLayout>
                 <NuxtPage />
             </NuxtLayout>
