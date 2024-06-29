@@ -7,8 +7,12 @@ const route = useRoute()
 const appName = ref(route.params.app)
 const workspaceName = ref(route.params.workspace)
 
+const componentExists = ref(true)
 const ComponentName = defineAsyncComponent(() =>
-    import(`@/components/${workspaceName.value}/${appName.value}.vue`).catch(() => null)
+    import(`@/components/${workspaceName.value}/${appName.value}.vue`).catch(() => {
+        componentExists.value = false
+        return null
+    })
 )
 
 onMounted(() => {
@@ -17,7 +21,7 @@ onMounted(() => {
 })
 
 const isComponentLoaded = computed(() =>
-    appName.value && workspaceName.value && ComponentName.value !== null
+    appName.value && workspaceName.value && componentExists.value
 )
 </script>
 
