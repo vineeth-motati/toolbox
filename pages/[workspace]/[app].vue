@@ -26,12 +26,17 @@ const isComponentLoaded = computed(() =>
 </script>
 
 <template>
-    <NCard class=" absolute inset-0 overflow-y-auto" hoverable>
+    <NCard class="absolute inset-0 overflow-y-auto" hoverable>
         <div v-if="isComponentLoaded" class="h-full relative">
             <component :is="ComponentName" class="h-full" />
         </div>
-        <p v-else>
-            Component is in development
-        </p>
+        <div v-else>
+            <NSkeleton class="h-full rounded-xl absolute inset-0" />
+            <NEmpty class="h-full rounded-xl absolute inset-0 text-center justify-center text-xl" description="Component is in development">
+                <template #icon>
+                    <Icon name="iconoir:hexagon-dice" class="self-center text-center justify-center text-5xl " />
+                </template>
+            </NEmpty>
+        </div>
     </NCard>
 </template>
