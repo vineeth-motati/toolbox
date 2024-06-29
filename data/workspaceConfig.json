@@ -1,0 +1,52 @@
+{
+    "top": [
+        {
+            "id": "text",
+            "label": "Text",
+            "icon": "fluent:text-font-16-filled",
+            "apps": [
+                { "id": "analyzerUtils", "label": "Analyzer & Utilities", "route": "/text/analyzerUtils" },
+                { "id": "markdownPreview", "label": "Markdown Preview", "route": "/text/markdownPreview" }
+            ]
+        },
+        {
+            "id": "generators",
+            "label": "Generators",
+            "icon": "ph:engine-bold",
+            "apps": [
+                { "id": "password", "label": "Password", "route": "/generators/password" },
+                { "id": "UUID", "label": "UUID", "route": "/generators/UUID" }
+            ]
+        },
+        {
+            "id": "encoders",
+            "label": "Encoders / Decoders",
+            "icon": "hugeicons:binary-code",
+            "apps": [
+                { "id": "QRCode", "label": "QR Code", "route": "/encoders/QRCode" },
+                { "id": "URL", "label": "URL", "route": "/encoders/URL" }
+            ]
+        }
+    ],
+    "middle": {
+        "id": "sideview",
+        "label": "Sideview",
+        "apps": [
+           
+        ]
+    },
+
+    "bottom": [
+        {
+            "id": "setting",
+            "label": "Setting",
+            "icon": "material-symbols:settings-outline",
+            "apps": [
+                { "id": "app1", "label": "App 1", "route": "/home/app1" },
+                { "id": "app2", "label": "App 2", "route": "/home/app2" },
+                { "id": "app3", "label": "App 3", "route": "/home2/app3" },
+                { "id": "app4", "label": "App 4", "route": "/home2/app4" }
+            ]
+        }
+    ]
+}

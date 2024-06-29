@@ -1,0 +1,43 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "NODE_ENV=production node .output/server/index.mjs",
+    "typecheck": "nuxt typecheck",
+    "lint:fix": "eslint . --fix",
+    "lint": "oxlint --deny-warnings -D correctness -D suspicious -D perf && eslint --max-warnings 0 .",
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@trpc/client": "^10.45.2",
+    "@trpc/server": "^10.45.2",
+    "jsqr": "^1.4.0",
+    "marked": "^13.0.0",
+    "nuxt": "^3.12.2",
+    "pdfjs-dist": "^4.3.136",
+    "superjson": "^2.2.1",
+    "trpc-nuxt": "^0.10.21",
+    "uuid": "^10.0.0",
+    "vue": "^3.4.29",
+    "vue-router": "^4.3.3",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.11.5",
+    "@bg-dev/nuxt-naiveui": "^1.11.0",
+    "@nuxtjs/tailwindcss": "^6.11.4",
+    "@tailwindcss/typography": "^0.5.13",
+    "@types/node": "^20.11.30",
+    "@types/uuid": "^10.0.0",
+    "eslint": "^8.57.0",
+    "nuxt-icon": "^0.6.10",
+    "oxlint": "^0.2.15",
+    "typescript": "^5.4.3",
+    "vue-tsc": "^2.0.7"
+  }
+}
