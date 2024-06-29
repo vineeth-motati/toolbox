@@ -39,9 +39,9 @@ const wordFrequency = ref<
 >([])
 
 const invisibleCharMap: { [key: string]: string } = {
-    ' ': '␣',
-    '\n': '⏎',
-    '\t': '⇥',
+    ' ': '⎵',
+    '\n': '⤶',
+    '\t': '⟶',
 }
 
 function mapInvisibleChars(char: string): string {
