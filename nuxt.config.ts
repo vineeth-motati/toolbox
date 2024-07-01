@@ -9,7 +9,9 @@ export default defineNuxtConfig({
         '@nuxtjs/tailwindcss',
         '@bg-dev/nuxt-naiveui',
         'nuxt-icon',
+        '@sidebase/nuxt-auth'
     ],
+    auth: { provider: { type: 'authjs' } },
     typescript: {
         shim: false
     }
