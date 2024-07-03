@@ -32,7 +32,7 @@ const outputElement = ref<HTMLElement | null>(null)
 </script>
 
 <template>
-    <div class="flex space-x-4 min-h-full h-full p-4">
+    <div class="flex h-full min-h-full p-4 space-x-4">
         <NSplit
             direction="horizontal"
             :max="0.75"
@@ -40,8 +40,8 @@ const outputElement = ref<HTMLElement | null>(null)
             :resize-trigger-size="16"
         >
             <template #1>
-                <div class="h-full flex flex-col">
-                    <div class="flex justify-between items-center mb-2">
+                <div class="flex flex-col h-full">
+                    <div class="flex items-center justify-between mb-2">
                         <h2 class="text-xl font-semibold">
                             Input
                         </h2>
@@ -59,20 +59,20 @@ const outputElement = ref<HTMLElement | null>(null)
                     <NInput
                         ref="inputElement"
                         v-model:value="urlInput"
-                        class="w-full h-full p-4 resize-none overflow-y-auto"
+                        class="w-full h-full p-4 overflow-y-auto resize-none"
                         placeholder="Enter your URL here..."
                         type="textarea"
                     />
                 </div>
             </template>
             <template #2>
-                <div class=" h-full flex flex-col">
+                <div class="flex flex-col h-full ">
                     <h2 class="mb-4 text-xl font-semibold">
                         Output
                     </h2>
 
-                    <NCard ref="outputElement" class="flex-1 overflow-hidden relative p-2">
-                        <div class="right-4 w-full min-w-full ml-4 pl-10 min-h-full h-full max-h-full inset-y-5 p-4 pt-0 prose absolute overflow-y-auto" v-text="urlOutput" />
+                    <NCard ref="outputElement" class="relative flex-1 p-2 overflow-hidden">
+                        <div class="absolute w-full h-full max-h-full min-w-full min-h-full p-4 pt-0 pl-10 ml-4 overflow-y-auto prose right-4 inset-y-5" v-text="urlOutput" />
                     </NCard>
                 </div>
             </template>

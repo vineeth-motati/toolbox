@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-green-300 absolute inset-0 overflow-y-auto">
+    <div class="absolute inset-0 overflow-y-auto bg-green-300">
         <div class="p-4">
             {{ $route.params.workspace }}
         </div>

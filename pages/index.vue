@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-    <div class="p-4 bg-gray-200 w-full h-full">
+    <div class="w-full h-full p-4 bg-gray-200">
         Home page
     </div>
 </template>

@@ -145,9 +145,9 @@ generatePasswords()
 </script>
 
 <template>
-    <div class="flex space-x-4 min-h-full h-full p-4">
-        <div class="w-1/2 h-full flex flex-col">
-            <div class="flex justify-between items-center mb-2">
+    <div class="flex h-full min-h-full p-4 space-x-4">
+        <div class="flex flex-col w-1/2 h-full">
+            <div class="flex items-center justify-between mb-2">
                 <h2 class="text-xl font-semibold">
                     Passwords
                 </h2>
@@ -172,15 +172,15 @@ generatePasswords()
                 type="textarea"
             />
         </div>
-        <div class="w-1/2 h-full flex flex-col">
-            <NForm class="flex-1 overflow-hidden relative p-2">
-                <h2 class="text-xl font-semibold mb-2">
+        <div class="flex flex-col w-1/2 h-full">
+            <NForm class="relative flex-1 p-2 overflow-hidden">
+                <h2 class="mb-2 text-xl font-semibold">
                     Configuration
                 </h2>
                 <NCard class="w-full p-1" hoverable>
                     <div class="flex justify-between mb-4">
                         <div>
-                            <label class="block text-md font-medium text-gray-700 mb-1">Type</label>
+                            <label class="block mb-1 font-medium text-gray-700 text-md">Type</label>
 
                             <NRadioGroup v-model:value="form.type" class="flex space-x-4">
                                 <NRadio value="password">
@@ -193,7 +193,7 @@ generatePasswords()
                         </div>
 
                         <div class="w-1/2">
-                            <label class="block text-md font-medium text-gray-700 mb-1">Number of Passwords</label>
+                            <label class="block mb-1 font-medium text-gray-700 text-md">Number of Passwords</label>
                             <NInputNumber
                                 v-model:value="form.numberOfPasswords"
                                 class="w-full"
@@ -205,7 +205,7 @@ generatePasswords()
 
                     <div v-if="form.type === 'password'" class="flex justify-between">
                         <div class="w-1/2">
-                            <label class="block text-md font-medium text-gray-700 mb-1">Include in Passwords</label>
+                            <label class="block mb-1 font-medium text-gray-700 text-md">Include in Passwords</label>
                             <NCheckboxGroup
                                 v-model:value="form.passwordOptions"
                                 class="space-y-2"
@@ -228,14 +228,14 @@ generatePasswords()
                         </div>
 
                         <div class="w-1/2 p-2">
-                            <label class="block text-md font-medium text-gray-700 mb-1">Password Length</label>
+                            <label class="block mb-1 font-medium text-gray-700 text-md">Password Length</label>
                             <NSlider v-model:value="form.passwordLength" :max="32" :min="8" />
                         </div>
                     </div>
 
                     <div v-if="form.type === 'passphrase'" class="flex justify-between">
                         <div class="w-1/2">
-                            <label class="block text-md font-medium text-gray-700 mb-1">Include in Passphrase</label>
+                            <label class="block mb-1 font-medium text-gray-700 text-md">Include in Passphrase</label>
                             <NCheckboxGroup
                                 v-model:value="form.passphraseOptions"
                                 class="space-y-2"
@@ -254,13 +254,13 @@ generatePasswords()
                                         maxlength="1"
                                         placeholder=""
                                     />
-                                    <label class="text-sm font-medium text-gray-700 mb-1">Word Separator</label>
+                                    <label class="mb-1 text-sm font-medium text-gray-700">Word Separator</label>
                                 </div>
                             </NCheckboxGroup>
                         </div>
 
                         <div class="w-1/2 p-2">
-                            <label class="block text-md font-medium text-gray-700 mb-1">Words Length</label>
+                            <label class="block mb-1 font-medium text-gray-700 text-md">Words Length</label>
                             <NSlider v-model:value="form.wordsLength" :max="10" :min="3" />
                         </div>
                     </div>

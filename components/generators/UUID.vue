@@ -87,9 +87,9 @@ generateUuids()
 </script>
 
 <template>
-    <div class="flex space-x-4 min-h-full h-full p-4">
-        <div class="w-1/2 h-full flex flex-col">
-            <div class="flex justify-between items-center mb-2">
+    <div class="flex h-full min-h-full p-4 space-x-4">
+        <div class="flex flex-col w-1/2 h-full">
+            <div class="flex items-center justify-between mb-2">
                 <h2 class="text-xl font-semibold">
                     UUIDs
                 </h2>
@@ -113,15 +113,15 @@ generateUuids()
                 type="textarea"
             />
         </div>
-        <div class="w-1/2 h-full flex flex-col">
-            <NForm class="flex-1 overflow-hidden relative p-2">
-                <h2 class="text-xl font-semibold mb-2">
+        <div class="flex flex-col w-1/2 h-full">
+            <NForm class="relative flex-1 p-2 overflow-hidden">
+                <h2 class="mb-2 text-xl font-semibold">
                     Configuration
                 </h2>
                 <NCard class="w-full p-1" hoverable>
                     <div class="flex justify-between mb-4">
                         <div class="w-1/2">
-                            <label class="block text-md font-medium text-gray-700 mb-1">UUID Version</label>
+                            <label class="block mb-1 font-medium text-gray-700 text-md">UUID Version</label>
                             <NSelect
                                 v-model:value="form.uuidVersion"
                                 class="w-full"
@@ -129,7 +129,7 @@ generateUuids()
                             />
                         </div>
                         <div class="w-1/2">
-                            <label class="block text-md font-medium text-gray-700 mb-1">Number of UUIDs</label>
+                            <label class="block mb-1 font-medium text-gray-700 text-md">Number of UUIDs</label>
                             <NInputNumber
                                 v-model:value="form.numberOfUuids"
                                 class="w-full"
@@ -140,11 +140,11 @@ generateUuids()
                     </div>
                     <div class="flex justify-between mb-4">
                         <div class="w-1/2">
-                            <label class="block text-md font-medium text-gray-700 mb-1">Show Hyphens</label>
+                            <label class="block mb-1 font-medium text-gray-700 text-md">Show Hyphens</label>
                             <NSwitch v-model:value="form.showHyphens" />
                         </div>
                         <div class="w-1/2">
-                            <label class="block text-md font-medium text-gray-700 mb-1">Uppercase</label>
+                            <label class="block mb-1 font-medium text-gray-700 text-md">Uppercase</label>
                             <NSwitch v-model:value="form.uppercase" />
                         </div>
                     </div>

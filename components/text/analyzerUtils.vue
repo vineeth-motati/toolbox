@@ -385,7 +385,7 @@ onMounted(updateStatistics)
         <div class="flex gap-4">
             <NCard embedded class="h-auto">
                 <div class="flex justify-between">
-                    <h2 class="text-xl font-semibold mb-2">
+                    <h2 class="mb-2 text-xl font-semibold">
                         Text
                     </h2>
                     <div class="flex gap-0">
@@ -411,7 +411,7 @@ onMounted(updateStatistics)
                 <NInput
                     id="text-input"
                     v-model:value="text"
-                    class="w-full mb-4 p-4"
+                    class="w-full p-4 mb-4"
                     placeholder="Enter your text here"
                     rows="25"
                     type="textarea"
@@ -420,10 +420,10 @@ onMounted(updateStatistics)
                 />
             </NCard>
 
-            <NCard class="mb-4 flex hoverable h-full" hoverable embedded>
+            <NCard class="flex h-full mb-4 hoverable" hoverable embedded>
                 <div class="flex">
                     <div class="w-1/2 mr-4">
-                        <h2 class="text-xl font-semibold mb-2">
+                        <h2 class="mb-2 text-xl font-semibold">
                             Statistics
                         </h2>
                         <NDataTable
@@ -449,7 +449,7 @@ onMounted(updateStatistics)
                         />
                     </div>
                     <div class="w-1/2">
-                        <h2 class="text-xl font-semibold mb-2">
+                        <h2 class="mb-2 text-xl font-semibold">
                             Character Frequency
                         </h2>
                         <NDataTable
@@ -462,7 +462,7 @@ onMounted(updateStatistics)
                             :data="characterFrequency"
                             :max-height="233"
                         />
-                        <h2 class="text-xl font-semibold mb-2">
+                        <h2 class="mb-2 text-xl font-semibold">
                             Word Frequency
                         </h2>
                         <NDataTable

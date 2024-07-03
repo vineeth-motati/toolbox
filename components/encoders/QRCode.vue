@@ -278,9 +278,9 @@ function handleUpload(options: UploadCustomRequestOptions) {
 
 <template>
     <div class="flex flex-col space-y-4">
-        <div class="flex space-x-4 p-4">
-            <div class="w-1/2 h-full flex flex-col">
-                <div class="flex justify-between items-center mb-2">
+        <div class="flex p-4 space-x-4">
+            <div class="flex flex-col w-1/2 h-full">
+                <div class="flex items-center justify-between mb-2">
                     <h2 class="text-xl font-semibold">
                         QR Code Encoder / Decoder
                     </h2>
@@ -301,13 +301,13 @@ function handleUpload(options: UploadCustomRequestOptions) {
             </div>
 
             <NForm class="w-1/2 space-y-4">
-                <h2 class="text-xl font-semibold content-end h-7">
+                <h2 class="content-end text-xl font-semibold h-7">
                     Configuration
                 </h2>
                 <NCard class="p-4 space-y-4" hoverable embedded>
-                    <div class="grid gap-4 grid-cols-2">
+                    <div class="grid grid-cols-2 gap-4">
                         <div>
-                            <label class="block text-md font-medium text-gray-700 mb-1">Error Correction Level</label>
+                            <label class="block mb-1 font-medium text-gray-700 text-md">Error Correction Level</label>
                             <NSelect
                                 v-model:value="form.errorCorrectionLevel"
                                 class="w-full"
@@ -315,7 +315,7 @@ function handleUpload(options: UploadCustomRequestOptions) {
                             />
                         </div>
                         <div>
-                            <label class="block text-md font-medium text-gray-700 mb-1">Size</label>
+                            <label class="block mb-1 font-medium text-gray-700 text-md">Size</label>
                             <NInputNumber
                                 v-model:value="form.size"
                                 class="w-full"
@@ -324,7 +324,7 @@ function handleUpload(options: UploadCustomRequestOptions) {
                             />
                         </div>
                         <div>
-                            <label class="block text-md font-medium text-gray-700 mb-1">Background Color</label>
+                            <label class="block mb-1 font-medium text-gray-700 text-md">Background Color</label>
                             <NColorPicker
                                 v-model:value="form.backgroundColor"
                                 class="w-full"
@@ -332,7 +332,7 @@ function handleUpload(options: UploadCustomRequestOptions) {
                             />
                         </div>
                         <div>
-                            <label class="block text-md font-medium text-gray-700 mb-1">Foreground Color</label>
+                            <label class="block mb-1 font-medium text-gray-700 text-md">Foreground Color</label>
                             <NColorPicker
                                 v-model:value="form.color"
                                 class="w-full"
@@ -341,7 +341,7 @@ function handleUpload(options: UploadCustomRequestOptions) {
                         </div>
 
                         <div>
-                            <label class="block text-md font-medium text-gray-700 mb-1">Icon URL</label>
+                            <label class="block mb-1 font-medium text-gray-700 text-md">Icon URL</label>
                             <NInput
                                 v-model:value="form.iconSrc"
                                 class="w-full"
@@ -349,7 +349,7 @@ function handleUpload(options: UploadCustomRequestOptions) {
                             />
                         </div>
                         <div>
-                            <label class="block text-md font-medium text-gray-700 mb-1">Icon Size</label>
+                            <label class="block mb-1 font-medium text-gray-700 text-md">Icon Size</label>
                             <NInputNumber v-model:value="form.iconSize" class="w-full" />
                         </div>
                     </div>
@@ -357,8 +357,8 @@ function handleUpload(options: UploadCustomRequestOptions) {
             </NForm>
         </div>
 
-        <div class="flex w-1/2 flex-col px-4">
-            <div class="flex justify-between items-center mb-2">
+        <div class="flex flex-col w-1/2 px-4">
+            <div class="flex items-center justify-between mb-2">
                 <h2 class="text-xl font-semibold">
                     QR Code
                 </h2>
@@ -391,10 +391,10 @@ function handleUpload(options: UploadCustomRequestOptions) {
                 </div>
             </div>
             <NCard class="p-4" hoverable embedded>
-                <div class="flex w-auto justify-center">
-                    <div class="h-full flex flex-col">
+                <div class="flex justify-center w-auto">
+                    <div class="flex flex-col h-full">
                         <div
-                            class="flex items-center justify-center border-dashed border-2 rounded-lg p-4"
+                            class="flex items-center justify-center p-4 border-2 border-dashed rounded-lg"
                         >
                             <NQrCode
                                 id="qrcode"
@@ -412,7 +412,7 @@ function handleUpload(options: UploadCustomRequestOptions) {
         <NModal v-model:show="isModalOpen" transform-origin="center" size="huge" title="QR Code">
             <NCard class="p-4 w-fit" hoverable embedded>
                 <div
-                    class="flex items-center justify-center border-dashed border-2 rounded-lg p-4"
+                    class="flex items-center justify-center p-4 border-2 border-dashed rounded-lg"
                 >
                     <NQrCode
                         v-model:value="textContent"
