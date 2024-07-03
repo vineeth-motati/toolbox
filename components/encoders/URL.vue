@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import { NCard, NInput } from 'naive-ui'
+import { NButton, NCard, NInput, NSplit } from 'naive-ui'
 
 const urlInput = ref<string>('')
 const urlOutput = ref<string>('')

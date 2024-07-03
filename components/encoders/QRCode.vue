@@ -16,6 +16,7 @@ import {
 } from 'naive-ui'
 import jsQR from 'jsqr'
 import * as pdfjsLib from 'pdfjs-dist'
+import { useToast } from '../ui/toast'
 
 // Define types for form state
 interface FormState {
@@ -36,7 +37,7 @@ const form = ref<FormState>({
     size: 300,
 })
 
-const notification = useNotification()
+const { toast } = useToast()
 const textContent = ref('')
 const uploadRef = ref<any>(null)
 const errorCorrectionLevels = [
@@ -53,7 +54,7 @@ function copyText() {
         return
     }
     navigator.clipboard.writeText(textContent.value).then(() => {
-        notification.success({
+        toast({
             title: 'Text copied to clipboard',
             duration: 3000,
         })
@@ -108,7 +109,7 @@ function copyQRCode() {
             canvas.toBlob((blob) => {
                 const item = new ClipboardItem({ 'image/png': blob! })
                 navigator.clipboard.write([item]).then(() => {
-                    notification.success({
+                    toast({
                         title: 'QR Code copied to clipboard',
                         duration: 3000,
                     })
@@ -179,9 +180,8 @@ function handleUpload(options: UploadCustomRequestOptions) {
     uploadRef.value?.clear()
 
     if (!allowedTypes.includes(file.file?.type || '')) {
-        notification.error({
+        toast({
             title: 'Invalid file type',
-            content: 'Please upload an image or PDF file.',
             duration: 3000,
         })
         return false
@@ -202,9 +202,8 @@ function handleUpload(options: UploadCustomRequestOptions) {
                         canvas.height = viewport.height
                         canvas.width = viewport.width
                         if (!context) {
-                            notification.error({
+                            toast({
                                 title: 'Error scanning PDF',
-                                content: 'An error occurred while scanning the PDF.',
                                 duration: 3000,
                             })
                             return false
@@ -215,24 +214,21 @@ function handleUpload(options: UploadCustomRequestOptions) {
                         const code = jsQR(imageData.data, imageData.width, imageData.height)
                         if (code) {
                             textContent.value = code.data
-                            notification.success({
+                            toast({
                                 title: 'QR Code found in PDF',
-                                content: 'The text field has been updated with the scanned content.',
                                 duration: 3000,
                             })
                             return false
                         }
                     }
-                    notification.error({
+                    toast({
                         title: 'No QR Code found',
-                        content: 'Unable to detect a QR Code in the PDF.',
                         duration: 3000,
                     })
                 }
                 catch (error) {
-                    notification.error({
+                    toast({
                         title: 'Error scanning PDF',
-                        content: 'An error occurred while scanning the PDF.',
                         duration: 3000,
                     })
                 }
@@ -252,16 +248,14 @@ function handleUpload(options: UploadCustomRequestOptions) {
 
                         if (code) {
                             textContent.value = code.data
-                            notification.success({
+                            toast({
                                 title: 'QR Code scanned successfully',
-                                content: 'The text field has been updated with the scanned content.',
                                 duration: 3000,
                             })
                         }
                         else {
-                            notification.error({
+                            toast({
                                 title: 'No QR Code found',
-                                content: 'Unable to detect a QR Code in the uploaded image.',
                                 duration: 3000,
                             })
                         }

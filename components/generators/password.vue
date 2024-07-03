@@ -12,6 +12,7 @@ import {
     NSlider,
     useNotification,
 } from 'naive-ui'
+import { useToast } from '../ui/toast'
 
 // Define types for form state
 interface FormState {
@@ -34,7 +35,7 @@ const form = ref<FormState>({
     wordsLength: 4,
 })
 
-const notification = useNotification()
+const { toast } = useToast()
 const generatedPasswords = ref('')
 
 watch(
@@ -50,7 +51,7 @@ function copyText() {
     }
 
     navigator.clipboard.writeText(generatedPasswords.value).then(() => {
-        notification.success({
+        toast({
             title: 'Passwords copied to clipboard',
             duration: 3000,
         })

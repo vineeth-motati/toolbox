@@ -9,8 +9,9 @@ import {
     NInput,
     useNotification,
 } from 'naive-ui'
+import { useToast } from '../ui/toast'
 
-const notification = useNotification()
+const { toast } = useToast()
 const text = ref('')
 const originalText = ref('')
 const selectedText = ref('')
@@ -105,7 +106,7 @@ function copyText() {
         return
     }
     navigator.clipboard.writeText(text.value).then(() => {
-        notification.success({
+        toast({
             title: 'Text copied to clipboard',
             duration: 3000,
         })
@@ -349,9 +350,9 @@ onMounted(updateStatistics)
     <div class="rounded-xl">
         <NGrid class="mb-4" cols="8" x-gap="12" y-gap="2">
             <NGi>
-                <NButton class="w-full overflow-hidden" @click="convertLineBreak('LF')">
+                <UiButton variant="destructive" @click="convertLineBreak('LF')">
                     Convert to LF
-                </NButton>
+                </UiButton>
             </NGi>
             <NGi>
                 <NButton

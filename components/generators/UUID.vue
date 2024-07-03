@@ -11,6 +11,7 @@ import {
     useNotification,
 } from 'naive-ui'
 import { v1 as uuidv1, v4 as uuidv4 } from 'uuid'
+import { useToast } from '../ui/toast'
 
 // Define types for form state
 interface FormState {
@@ -31,7 +32,7 @@ const uuidVersionOptions = [
     { label: 'UUID v1', value: 1 },
     { label: 'UUID v4', value: 4 },
 ]
-const notification = useNotification()
+const { toast } = useToast()
 const generatedUuids = ref('')
 
 watch(
@@ -66,7 +67,7 @@ function copyText() {
     }
 
     navigator.clipboard.writeText(generatedUuids.value).then(() => {
-        notification.success({
+        toast({
             title: 'UUIDs copied to clipboard',
             duration: 3000,
         })
