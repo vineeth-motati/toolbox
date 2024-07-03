@@ -9,8 +9,8 @@ defineProps({
 </script>
 
 <template>
-    <div class="min-w-56 h-screen pt-2 pb-2 pr-2">
-        <div class="bg-gray-200 w-full h-full rounded-xl text-center p-2">
+    <div class="h-screen pt-2 pb-2 pr-2 min-w-56">
+        <div class="w-full h-full p-2 text-center bg-gray-200 rounded-xl">
             sideview
             {{ id }}
         </div>

@@ -52,20 +52,20 @@ function isActive(workspaceId: string) {
 </script>
 
 <template>
-    <div class="min-w-20 h-screen p-2">
-        <div class="flex flex-col bg-gray-200 w-full h-full rounded-xl text-center pt-2">
+    <div class="h-screen p-2 min-w-20">
+        <div class="flex flex-col w-full h-full pt-2 text-center bg-gray-200 rounded-xl">
             <!-- Sidebar logo -->
             <NuxtLink class="block" to="/">
                 <Icon class="w-9 h-9" color="" name="iconoir:hexagon-dice" />
             </NuxtLink>
 
             <!-- Sidebar navigation -->
-            <div class="flex flex-col grow justify-between">
+            <div class="flex flex-col justify-between grow">
                 <!-- Top navigation -->
                 <ul class="mt-4">
                     <li v-for="workspace in spaces.top" :key="workspace.id" class="mb-2">
                         <NuxtLink
-                            class="btn block px-4 py-2 rounded-xl hover:bg-gray-300"
+                            class="block px-4 py-2 btn rounded-xl hover:bg-gray-300"
                             :class="{ 'bg-gray-300': isActive(workspace.id) }"
                             :to="`/${workspace.id}`"
                             @click="updateActiveWorkspace(workspace.id)"
