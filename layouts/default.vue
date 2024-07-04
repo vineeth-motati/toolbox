@@ -7,6 +7,7 @@ const activeWorkspace = ref(workspaces[0])
 const activeWorkspaceApps = ref(activeWorkspace.value.apps)
 const sideviewActive = ref(false)
 const activeSideviewId = ref('')
+const user = useSupabaseUser()
 // Function to update active workspace and its apps
 function updateActiveWorkspace(workspaceId: string) {
     const workspace = workspaces.find(ws => ws.id === workspaceId)
@@ -38,13 +39,15 @@ onMounted(() => {
 <template>
     <div class="flex">
         <LayoutSidebar
+            v-if="!user"
             :spaces="workspaceConfig"
             @sideview-toggled="toggleSideview"
             @workspace-changed="updateActiveWorkspace"
         />
-        <LayoutSideview v-if="sideviewActive" :id="activeSideviewId" />
+        <LayoutSideview v-if="!user && sideviewActive" :id="activeSideviewId" />
         <div class="flex flex-col w-full">
             <LayoutTopbar
+                v-if="!user"
                 :apps="activeWorkspaceApps"
                 :workspace="activeWorkspace.id"
             />
