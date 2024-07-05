@@ -383,7 +383,7 @@ onMounted(updateStatistics)
             </template>
         </NGrid>
         <div class="flex gap-4">
-            <NCard embedded class="h-auto">
+            <NCard class="h-auto">
                 <div class="flex justify-between">
                     <h2 class="mb-2 text-xl font-semibold">
                         Text
@@ -420,7 +420,7 @@ onMounted(updateStatistics)
                 />
             </NCard>
 
-            <NCard class="flex h-full mb-4 hoverable" hoverable embedded>
+            <NCard class="flex h-full mb-4 hoverable" hoverable>
                 <div class="flex">
                     <div class="w-1/2 mr-4">
                         <h2 class="mb-2 text-xl font-semibold">

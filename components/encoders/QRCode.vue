@@ -285,7 +285,7 @@ function handleUpload(options: UploadCustomRequestOptions) {
                         QR Code Encoder / Decoder
                     </h2>
                     <div class="flex gap-2">
-                        <NButton class="ml-1 text-lg" @click="copyText">
+                        <NButton class="ml-1 text-lg" type="primary" @click="copyText">
                             <Icon class="mr-1" name="ci:copy" />
                             Copy
                         </NButton>
@@ -304,7 +304,7 @@ function handleUpload(options: UploadCustomRequestOptions) {
                 <h2 class="content-end text-xl font-semibold h-7">
                     Configuration
                 </h2>
-                <NCard class="p-4 space-y-4" hoverable embedded>
+                <NCard class="p-4 space-y-4" hoverable>
                     <div class="grid grid-cols-2 gap-4">
                         <div>
                             <label class="block mb-1 font-medium text-gray-700 text-md">Error Correction Level</label>
@@ -390,7 +390,7 @@ function handleUpload(options: UploadCustomRequestOptions) {
                     </NButton>
                 </div>
             </div>
-            <NCard class="p-4" hoverable embedded>
+            <NCard class="p-4" hoverable>
                 <div class="flex justify-center w-auto">
                     <div class="flex flex-col h-full">
                         <div

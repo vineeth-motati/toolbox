@@ -1,0 +1,29 @@
+[
+  {
+    "id": "text",
+    "name": "Text",
+    "iconName": "fluent:text-font-16-filled",
+    "children": [
+      { "id": "analyzerUtils", "name": "Analyzer & Utilities", "path": "/text/analyzerUtils" },
+      { "id": "markdownPreview", "name": "Markdown Preview", "path": "/text/markdownPreview" }
+    ]
+  },
+  {
+    "id": "generators",
+    "name": "Generators",
+    "iconName": "ph:engine-bold",
+    "children": [
+      { "id": "password", "name": "Password", "path": "/generators/password" },
+      { "id": "UUID", "name": "UUID", "path": "/generators/UUID" }
+    ]
+  },
+  {
+    "id": "encoders",
+    "name": "Encoders / Decoders",
+    "iconName": "hugeicons:binary-code",
+    "children": [
+      { "id": "QRCode", "name": "QR Code", "path": "/encoders/QRCode" },
+      { "id": "URL", "name": "URL", "path": "/encoders/URL" }
+    ]
+  }
+]
