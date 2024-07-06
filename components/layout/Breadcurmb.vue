@@ -23,7 +23,7 @@ const breadcrumbItems = computed(() => {
         else {
             const child = menuData
                 .flatMap(cat => cat.children)
-                .find(child => child.path === currentPath)
+                .find(child => child?.path === currentPath)
 
             if (child) {
                 items.push({ name: child.name, path: child.path })

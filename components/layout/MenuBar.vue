@@ -13,7 +13,7 @@ const menuOptions = computed(() =>
         name: option.path
             ? () => h(NuxtLink, { to: option.path }, { default: () => option.name })
             : option.name,
-        children: option.children
+        children: option?.children
             ? option.children.map(child => ({
                 ...child,
                 name: () => h(NuxtLink, { to: child.path }, { default: () => child.name })
