@@ -39,7 +39,7 @@ const breadcrumbItems = computed(() => {
     <NBreadcrumb class="p-2">
         <NBreadcrumbItem>
             <NuxtLink to="/">
-                Home
+                Vineeth's Devtoys
             </NuxtLink>
         </NBreadcrumbItem>
         <NBreadcrumbItem v-for="item in breadcrumbItems" :key="item.path">
