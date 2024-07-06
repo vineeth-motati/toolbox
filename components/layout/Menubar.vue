@@ -8,6 +8,10 @@ const props = defineProps({
     menuOptions: {
         type: Array,
         required: true
+    },
+    activeKey: {
+        type: String,
+        required: false
     }
 })
 const isCollapsed = ref(true)
@@ -58,6 +62,7 @@ function handleMenuClick(key, item) {
                 </NuxtLink>
             </div>
             <NMenu
+                :value="activeKey || null"
                 :collapsed="isCollapsed"
                 :options="menuOptionsData"
                 :collapsed-icon-size="24"

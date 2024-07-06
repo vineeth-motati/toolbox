@@ -1,10 +1,21 @@
 <script setup lang="ts">
 import menuOptions from '@/data/menuOptions.json'
+
+const activeKey = ref('')
+
+watch(
+    () => useRoute().params,
+    (newParams) => {
+        activeKey.value = Array.isArray(newParams?.workspace) ? newParams.workspace[0] : newParams.workspace
+        activeKey.value = newParams.app ? Array.isArray(newParams?.app) ? newParams.app[0] : newParams.app : activeKey.value
+    },
+    { immediate: true }
+)
 </script>
 
 <template>
     <div class="flex">
-        <LayoutMenubar :menu-options="menuOptions" />
+        <LayoutMenubar :menu-options="menuOptions" :active-key="activeKey" />
         <div class="flex flex-col w-full ml-12">
             <LayoutBreadcurmb class="w-full py-2 pr-2 min-h-14" />
             <div class="w-full h-full pb-2 pr-2">
