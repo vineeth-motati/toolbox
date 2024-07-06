@@ -35,18 +35,23 @@ function handleMenuClick(key, item) {
 </script>
 
 <template>
-    <div class="flex flex-col h-screen ">
-        <div class="p-2">
-            <NuxtLink class="w-9 h-9" to="/">
-                <Icon class="w-9 h-9" name="iconoir:hexagon-dice" />
-            </NuxtLink>
-        </div>
+    <div
+        class="flex flex-col h-screen relative"
+        @mouseenter="isCollapsed = false"
+        @mouseleave="isCollapsed = true"
+    >
         <div
-            class="side-menu"
-            :class="{ collapsed: isCollapsed }"
-            @mouseenter="isCollapsed = false"
-            @mouseleave="isCollapsed = true"
+            class="side-menu absolute top-0 inset-y-0 left-0 transition-all duration-400 mt-14 z-10 bg-white hover:shadow-2xl"
+            :class="isCollapsed ? 'w-12' : 'w-60'"
         >
+            <div
+                class="p-2 fixed top-0 left-0 z-10 bg-white transition-all duration-400"
+                :class="isCollapsed ? 'w-12' : 'w-60'"
+            >
+                <NuxtLink class="w-9 h-9" to="/">
+                    <Icon class="w-9 h-9" name="iconoir:hexagon-dice" />
+                </NuxtLink>
+            </div>
             <NMenu
                 :collapsed="isCollapsed"
                 :options="menuOptions"
@@ -68,12 +73,4 @@ function handleMenuClick(key, item) {
     </div>
 </template>
 
-<style scoped>
-.side-menu {
-    width: 200px;
-    transition: width 0.2s;
-}
-.side-menu.collapsed {
-    width: 48px;
-}
-</style>
+<style scoped></style>
