@@ -3,7 +3,7 @@
 
 <template>
     <div class="flex">
-        <LayoutMenuBar />
+        <LayoutMenubar />
         <div class="flex flex-col w-full ml-12">
             <LayoutBreadcurmb class="w-full py-2 pr-2 min-h-14" />
             <div class="w-full h-full pb-2 pr-2">
