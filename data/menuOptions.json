@@ -19,7 +19,7 @@
   },
   {
     "id": "encoders",
-    "name": "Encoders / Decoders",
+    "name": "Encoders & Decoders",
     "iconName": "hugeicons:binary-code",
     "children": [
       { "id": "QRCode", "name": "QR Code", "path": "/encoders/QRCode" },

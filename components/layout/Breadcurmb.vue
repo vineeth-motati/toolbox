@@ -36,7 +36,7 @@ const breadcrumbItems = computed(() => {
 </script>
 
 <template>
-    <NBreadcrumb>
+    <NBreadcrumb class="p-2">
         <NBreadcrumbItem>
             <NuxtLink to="/">
                 Home

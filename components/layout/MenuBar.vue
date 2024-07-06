@@ -36,7 +36,7 @@ function handleMenuClick(key, item) {
 
 <template>
     <div class="flex flex-col h-screen ">
-        <div class="p-2 self-center">
+        <div class="p-2">
             <NuxtLink class="w-9 h-9" to="/">
                 <Icon class="w-9 h-9" name="iconoir:hexagon-dice" />
             </NuxtLink>

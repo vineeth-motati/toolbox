@@ -20,7 +20,7 @@
         },
         {
             "id": "encoders",
-            "label": "Encoders / Decoders",
+            "label": "Encoders & Decoders",
             "icon": "hugeicons:binary-code",
             "apps": [
                 { "id": "QRCode", "label": "QR Code", "route": "/encoders/QRCode" },

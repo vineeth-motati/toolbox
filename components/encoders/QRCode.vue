@@ -285,7 +285,7 @@ function handleUpload(options: UploadCustomRequestOptions) {
                         QR Code Encoder / Decoder
                     </h2>
                     <div class="flex gap-2">
-                        <NButton class="ml-1 text-lg" type="primary" @click="copyText">
+                        <NButton class="ml-1 text-lg" type="primary" secondary @click="copyText">
                             <Icon class="mr-1" name="ci:copy" />
                             Copy
                         </NButton>
@@ -363,7 +363,7 @@ function handleUpload(options: UploadCustomRequestOptions) {
                     QR Code
                 </h2>
                 <div class="flex gap-2">
-                    <NButton class="ml-1 text-lg" @click="downloadQRCode">
+                    <NButton class="ml-1 text-lg" tertiary @click="downloadQRCode">
                         <Icon class="mr-1" name="mage:image-download" />
                         Download
                     </NButton>
@@ -375,16 +375,16 @@ function handleUpload(options: UploadCustomRequestOptions) {
                         :max="1"
                         class="w-fit"
                     >
-                        <NButton class="ml-1 text-lg">
+                        <NButton class="ml-1 text-lg" tertiary>
                             <Icon class="mr-1" name="mage:image-upload" />
                             Upload QR Code
                         </NButton>
                     </NUpload>
-                    <NButton class="ml-1 text-lg" @click="copyQRCode">
+                    <NButton class="ml-1 text-lg" tertiary @click="copyQRCode">
                         <Icon class="mr-1" name="ci:copy" />
                         Copy QR Code
                     </NButton>
-                    <NButton class="ml-1 text-lg" @click="isModalOpen = true">
+                    <NButton class="ml-1 text-lg" tertiary @click="isModalOpen = true">
                         <Icon class="mr-1" name="iconamoon:screen-full" />
                         Fullscreen
                     </NButton>
