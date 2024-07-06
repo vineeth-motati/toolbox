@@ -26,7 +26,7 @@ const isComponentLoaded = computed(() =>
 </script>
 
 <template>
-    <NCard class="absolute inset-0 overflow-y-auto" hoverable>
+    <NCard class="absolute inset-0 overflow-y-auto rounded-lg" embedded>
         <div v-if="isComponentLoaded" class="relative h-full">
             <component :is="ComponentName" class="h-full" />
         </div>

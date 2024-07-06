@@ -1,6 +1,6 @@
 {
   "common": {
-    "borderRadius": "12px",
+    "borderRadius": "8px",
     "fontSize": "16px"
   }
 }
