@@ -94,11 +94,11 @@ generateUuids()
                     UUIDs
                 </h2>
                 <div class="flex gap-2">
-                    <NButton class="ml-1 text-lg" @click="copyText">
+                    <NButton class="ml-1 text-lg" type="primary" secondary @click="copyText">
                         <Icon class="mr-1" name="ci:copy" />
                         Copy
                     </NButton>
-                    <NButton class="text-lg" type="primary" @click="generateUuids">
+                    <NButton class="text-lg" type="primary" secondary @click="generateUuids">
                         <Icon class="mr-1" name="mingcute:refresh-2-fill" />
                         Regenerate
                     </NButton>

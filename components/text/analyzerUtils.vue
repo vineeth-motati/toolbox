@@ -383,7 +383,7 @@ onMounted(updateStatistics)
             </template>
         </NGrid>
         <div class="flex gap-4">
-            <NCard embedded class="h-auto">
+            <NCard class="h-auto">
                 <div class="flex justify-between">
                     <h2 class="mb-2 text-xl font-semibold">
                         Text
@@ -393,16 +393,16 @@ onMounted(updateStatistics)
                             Show original text
                         </NButton>
                         <NDivider class="self-center !h-5 !w-0.5" vertical />
-                        <NButton class="mx-1 text-lg" @click="copyText">
+                        <NButton class="mx-1 text-lg" type="primary" secondary @click="copyText">
                             <Icon class="mr-1" name="ci:copy" />
                             Copy
                         </NButton>
-                        <NButton class="mx-1 text-lg" @click="pasteText">
+                        <NButton class="mx-1 text-lg" type="primary" secondary @click="pasteText">
                             <Icon class="mr-1" name="fluent:clipboard-paste-24-regular" />
                             Paste
                         </NButton>
                         <NDivider class="self-center !h-5 !w-0.5" vertical />
-                        <NButton class="text-lg" @click="clearText">
+                        <NButton class="text-lg" type="error" secondary @click="clearText">
                             <Icon name="f7:clear" class="mr-1" />
                             Clear
                         </NButton>
@@ -420,7 +420,7 @@ onMounted(updateStatistics)
                 />
             </NCard>
 
-            <NCard class="flex h-full mb-4 hoverable" hoverable embedded>
+            <NCard class="flex h-full mb-4 hoverable" hoverable>
                 <div class="flex">
                     <div class="w-1/2 mr-4">
                         <h2 class="mb-2 text-xl font-semibold">

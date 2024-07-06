@@ -285,7 +285,7 @@ function handleUpload(options: UploadCustomRequestOptions) {
                         QR Code Encoder / Decoder
                     </h2>
                     <div class="flex gap-2">
-                        <NButton class="ml-1 text-lg" @click="copyText">
+                        <NButton class="ml-1 text-lg" type="primary" secondary @click="copyText">
                             <Icon class="mr-1" name="ci:copy" />
                             Copy
                         </NButton>
@@ -295,16 +295,22 @@ function handleUpload(options: UploadCustomRequestOptions) {
                     v-model:value="textContent"
                     class="w-full h-full"
                     placeholder="Add your text here"
+                    maxlength="1500"
                     rows="12"
                     type="textarea"
-                />
+                    :show-count="true"
+                >
+                    <template #count="{ value }">
+                        {{ value.length > 1000 ? `${value.length.toString()} / ` + `1500` : null }}
+                    </template>
+                </NInput>
             </div>
 
             <NForm class="w-1/2 space-y-4">
                 <h2 class="content-end text-xl font-semibold h-7">
                     Configuration
                 </h2>
-                <NCard class="p-4 space-y-4" hoverable embedded>
+                <NCard class="p-4 space-y-4" hoverable>
                     <div class="grid grid-cols-2 gap-4">
                         <div>
                             <label class="block mb-1 font-medium text-gray-700 text-md">Error Correction Level</label>
@@ -363,7 +369,7 @@ function handleUpload(options: UploadCustomRequestOptions) {
                     QR Code
                 </h2>
                 <div class="flex gap-2">
-                    <NButton class="ml-1 text-lg" @click="downloadQRCode">
+                    <NButton class="ml-1 text-lg" tertiary @click="downloadQRCode">
                         <Icon class="mr-1" name="mage:image-download" />
                         Download
                     </NButton>
@@ -375,22 +381,22 @@ function handleUpload(options: UploadCustomRequestOptions) {
                         :max="1"
                         class="w-fit"
                     >
-                        <NButton class="ml-1 text-lg">
+                        <NButton class="ml-1 text-lg" tertiary>
                             <Icon class="mr-1" name="mage:image-upload" />
                             Upload QR Code
                         </NButton>
                     </NUpload>
-                    <NButton class="ml-1 text-lg" @click="copyQRCode">
+                    <NButton class="ml-1 text-lg" tertiary @click="copyQRCode">
                         <Icon class="mr-1" name="ci:copy" />
                         Copy QR Code
                     </NButton>
-                    <NButton class="ml-1 text-lg" @click="isModalOpen = true">
+                    <NButton class="ml-1 text-lg" tertiary @click="isModalOpen = true">
                         <Icon class="mr-1" name="iconamoon:screen-full" />
                         Fullscreen
                     </NButton>
                 </div>
             </div>
-            <NCard class="p-4" hoverable embedded>
+            <NCard class="p-4" hoverable>
                 <div class="flex justify-center w-auto">
                     <div class="flex flex-col h-full">
                         <div
