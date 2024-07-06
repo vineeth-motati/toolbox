@@ -1,9 +1,10 @@
 <script setup lang="ts">
+import menuOptions from '@/data/menuOptions.json'
 </script>
 
 <template>
     <div class="flex">
-        <LayoutMenubar />
+        <LayoutMenubar :menu-options="menuOptions" />
         <div class="flex flex-col w-full ml-12">
             <LayoutBreadcurmb class="w-full py-2 pr-2 min-h-14" />
             <div class="w-full h-full pb-2 pr-2">

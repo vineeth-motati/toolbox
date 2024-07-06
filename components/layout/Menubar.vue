@@ -3,12 +3,17 @@ import { computed, h, ref } from 'vue'
 import { NMenu } from 'naive-ui'
 import { Icon as IconifyIcon } from '@iconify/vue'
 import { NuxtLink } from '#components'
-import menuOptionsData from '@/data/menuOptions.json'
 
+const props = defineProps({
+    menuOptions: {
+        type: Array,
+        required: true
+    }
+})
 const isCollapsed = ref(true)
 
-const menuOptions = computed(() =>
-    menuOptionsData.map(option => ({
+const menuOptionsData = computed(() =>
+    props.menuOptions.map(option => ({
         ...option,
         name: option.path
             ? () => h(NuxtLink, { to: option.path }, { default: () => option.name })
@@ -54,7 +59,7 @@ function handleMenuClick(key, item) {
             </div>
             <NMenu
                 :collapsed="isCollapsed"
-                :options="menuOptions"
+                :options="menuOptionsData"
                 :collapsed-icon-size="24"
                 :icon-size="24"
                 bordered
