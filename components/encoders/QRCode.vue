@@ -295,9 +295,15 @@ function handleUpload(options: UploadCustomRequestOptions) {
                     v-model:value="textContent"
                     class="w-full h-full"
                     placeholder="Add your text here"
+                    maxlength="1500"
                     rows="12"
                     type="textarea"
-                />
+                    :show-count="true"
+                >
+                    <template #count="{ value }">
+                        {{ value.length > 1000 ? `${value.length.toString()} / ` + `1500` : null }}
+                    </template>
+                </NInput>
             </div>
 
             <NForm class="w-1/2 space-y-4">

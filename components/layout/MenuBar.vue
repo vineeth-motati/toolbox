@@ -41,8 +41,8 @@ function handleMenuClick(key, item) {
         @mouseleave="isCollapsed = true"
     >
         <div
-            class="side-menu absolute top-0 inset-y-0 left-0 transition-all duration-400 mt-14 z-10 bg-white hover:shadow-2xl"
-            :class="isCollapsed ? 'w-12' : 'w-60'"
+            class="side-menu absolute top-0 inset-y-0 left-0 transition-all duration-400 mt-14 z-10 bg-white"
+            :class="isCollapsed ? 'w-12' : 'w-60 shadow-2xl'"
         >
             <div
                 class="p-2 fixed top-0 left-0 z-10 bg-white transition-all duration-400"
