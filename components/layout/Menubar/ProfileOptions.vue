@@ -50,7 +50,7 @@ const profileOptionsData = computed(() => [
             }
         : {
                 id: 'profile',
-                name: () => h(NuxtLink, { to: '/auth', }, { default: () => 'Login' }),
+                name: () => h(NuxtLink, { to: '/auth', }, { default: () => 'SignIn / SignUp' }),
                 iconName: 'lucide:user',
                 path: '/auth',
             },

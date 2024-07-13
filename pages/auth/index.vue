@@ -10,7 +10,6 @@ const message = useMessage()
 
 async function handleGitHubSignIn() {
     const { error } = await supabase.auth.signInWithOAuth({ provider: 'github' })
-
     if (error) {
         message.error(error.message)
     }
@@ -31,6 +30,21 @@ async function handleEmailSignIn() {
         message.success('Successfully signed in.')
     }
 }
+
+async function handleEmailSignUp() {
+    loading.value = true
+    const { error } = await supabase.auth.signUp({
+        email: email.value,
+        password: password.value
+    })
+    loading.value = false
+    if (error) {
+        message.error(error.message)
+    }
+    else {
+        message.success('Successfully signed up. Please check your email for confirmation.')
+    }
+}
 </script>
 
 <template>
@@ -41,20 +55,49 @@ async function handleEmailSignIn() {
                     <h2 class="text-2xl font-semibold mb-4">
                         Sign in / Sign up
                     </h2>
-                    <NForm class="text-left" @submit.prevent="handleEmailSignIn">
-                        <NInput v-model:value="email" placeholder="Email" class="mb-2 p-1" size="large" />
-                        <NInput v-model:value="password" placeholder="Password" type="password" class="mb-2 p-1" size="large" show-password-on="mousedown" />
-                        <NButton
-                            type="primary"
-                            size="large"
-                            :loading="loading"
-                            class="w-full"
-                            :disabled="loading"
-                            @click="handleEmailSignIn"
-                        >
-                            Sign In
-                        </NButton>
-                    </NForm>
+                    <NTabs default-value="signin" size="large" type="segment" justify-content="space-evenly" animated>
+                        <NTabPane name="signin" tab="Sign In">
+                            <NForm class="text-left">
+                                <NFormItemRow label="Email">
+                                    <NInput v-model:value="email" placeholder="Email" class="mb-2 p-1" size="large" />
+                                </NFormItemRow>
+                                <NFormItemRow label="Password">
+                                    <NInput v-model:value="password" placeholder="Password" type="password" class="mb-2 p-1" size="large" show-password-on="click" />
+                                </NFormItemRow>
+                            </NForm>
+                            <NButton
+                                type="primary"
+                                size="large"
+                                :loading="loading"
+                                class="w-full"
+                                :disabled="loading"
+                                @click="handleEmailSignIn"
+                            >
+                                Sign In
+                            </NButton>
+                        </NTabPane>
+                        <NTabPane name="signup" tab="Sign Up">
+                            <NForm class="text-left">
+                                <NFormItemRow label="Email">
+                                    <NInput v-model:value="email" placeholder="Email" class="mb-2 p-1" size="large" />
+                                </NFormItemRow>
+                                <NFormItemRow label="Password">
+                                    <NInput v-model:value="password" placeholder="Password" type="password" class="mb-2 p-1" size="large" show-password-on="click" />
+                                </NFormItemRow>
+                            </NForm>
+
+                            <NButton
+                                type="primary"
+                                size="large"
+                                :loading="loading"
+                                class="w-full"
+                                :disabled="loading"
+                                @click="handleEmailSignUp"
+                            >
+                                Sign Up
+                            </NButton>
+                        </NTabPane>
+                    </NTabs>
                     <NDivider>
                         <span class="!text-gray-500">or</span>
                     </NDivider>
