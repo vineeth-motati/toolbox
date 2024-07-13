@@ -14,7 +14,7 @@ watch(
 )
 
 supabase.auth.onAuthStateChange(async (event: string, _session: any) => {
-    if (event) {
+    if (event === 'SIGNED_OUT' || event === 'PASSWORD_RESET') {
         await navigateTo('/')
     }
 })

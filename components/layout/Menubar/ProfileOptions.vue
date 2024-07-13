@@ -11,6 +11,7 @@ defineProps({
 
 const user = useSupabaseUser()
 const supabase = useSupabaseClient()
+const message = useMessage()
 
 function renderIcon(option: { [key: string]: any }) {
     if (option.avatarUrl) {
@@ -24,7 +25,10 @@ function renderIcon(option: { [key: string]: any }) {
 async function handleLogout() {
     const { error } = await supabase.auth.signOut()
     if (error) {
-        console.error(error)
+        message.error(error)
+    }
+    else {
+        message.success('Logged out')
     }
 }
 
@@ -32,7 +36,7 @@ const profileOptionsData = computed(() => [
     user.value
         ? {
                 id: 'profile',
-                name: () => h(NEllipsis, { style: { maxWidth: '150px' } }, { default: () => user.value?.user_metadata?.full_name }),
+                name: () => h(NEllipsis, { style: { maxWidth: '150px' } }, { default: () => user.value?.user_metadata?.full_name || user.value?.email }),
                 iconName: 'lucide:user',
                 avatarUrl: user.value?.user_metadata?.avatar_url || null,
                 children: [
