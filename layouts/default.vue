@@ -2,6 +2,7 @@
 import menuOptions from '@/data/menuOptions.json'
 
 const activeKey = ref('')
+const supabase = useSupabaseClient()
 
 watch(
     () => useRoute().params,
@@ -11,6 +12,12 @@ watch(
     },
     { immediate: true }
 )
+
+supabase.auth.onAuthStateChange(async (event: string, _session: any) => {
+    if (event === 'SIGNED_OUT' || event === 'SIGNED_IN') {
+        await navigateTo('/')
+    }
+})
 </script>
 
 <template>

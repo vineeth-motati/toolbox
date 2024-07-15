@@ -39,7 +39,9 @@ const breadcrumbItems = computed(() => {
     <NBreadcrumb class="p-2 content-center">
         <NBreadcrumbItem>
             <NuxtLink to="/">
-                Vineeth's Devtoys
+                <span class="text-lg font-semibold">
+                    Toolbox
+                </span>
             </NuxtLink>
         </NBreadcrumbItem>
         <NBreadcrumbItem v-for="item in breadcrumbItems" :key="item.path" class="ml-2">

@@ -1,6 +1,7 @@
 {
   "common": {
     "borderRadius": "8px",
-    "fontSize": "16px"
+    "fontSize": "16px",
+    "dividerColor": "rgba(225, 225, 225, 1)"
   }
 }

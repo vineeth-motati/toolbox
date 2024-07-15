@@ -61,24 +61,26 @@ function handleMenuClick(key, item) {
                     <Icon class="w-9 h-9" name="iconoir:hexagon-dice" />
                 </NuxtLink>
             </div>
-            <NMenu
-                :value="activeKey || null"
-                :collapsed="isCollapsed"
-                :options="menuOptionsData"
-                :collapsed-icon-size="24"
-                :icon-size="24"
-                bordered
-                :indent="32"
-                :root-indent="12"
-                accordion
-                mode="vertical"
-                key-field="id"
-                responsive
-                label-field="name"
-                children-field="children"
-                :render-icon="renderIcon"
-                @update:value="handleMenuClick"
-            />
+            <div class="flex flex-col justify-between h-full">
+                <NMenu
+                    :value="activeKey || null"
+                    :collapsed="isCollapsed"
+                    :options="menuOptionsData"
+                    :collapsed-icon-size="24"
+                    :icon-size="24"
+                    bordered
+                    :indent="32"
+                    :root-indent="12"
+                    accordion
+                    mode="vertical"
+                    key-field="id"
+                    label-field="name"
+                    children-field="children"
+                    :render-icon="renderIcon"
+                    @update:value="handleMenuClick"
+                />
+                <LayoutMenubarProfileOptions :is-collapsed="isCollapsed" />
+            </div>
         </div>
     </div>
 </template>

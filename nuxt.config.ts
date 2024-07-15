@@ -9,9 +9,18 @@ export default defineNuxtConfig({
         '@nuxtjs/tailwindcss',
         '@bg-dev/nuxt-naiveui',
         'nuxt-icon',
-        '@sidebase/nuxt-auth'
+        '@nuxtjs/supabase'
     ],
-    auth: { provider: { type: 'authjs' } },
+
+    supabase: {
+        redirectOptions: {
+            login: '/auth',
+            callback: '/',
+            include: ['/encoders(/*)?'],
+            exclude: [],
+            cookieRedirect: false,
+        }
+    },
     typescript: {
         shim: false
     }
