@@ -95,7 +95,7 @@ function storeOriginalText() {
 }
 
 // Function to show the original text
-function showOriginalText() {
+function clearFormatting() {
     text.value = originalText.value
 }
 
@@ -389,8 +389,9 @@ onMounted(updateStatistics)
                         Text
                     </h2>
                     <div class="flex gap-0">
-                        <NButton class="mx-1 text-lg" @click="showOriginalText">
-                            Show original text
+                        <NButton class="mx-1 text-lg" type="tertiary" secondary @click="clearFormatting">
+                            <Icon class="mr-1" name="fa6-solid:text-slash" />
+                            Clear Formatting
                         </NButton>
                         <NDivider class="self-center !h-5 !w-0.5" vertical />
                         <NButton class="mx-1 text-lg" type="primary" secondary @click="copyText">
