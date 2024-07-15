@@ -52,9 +52,6 @@ async function handleEmailSignUp() {
         <div class="flex items-center justify-center h-full text-center text-2xl">
             <NCard class="w-auto max-w-md p-4" hoverable>
                 <div>
-                    <h2 class="text-2xl font-semibold mb-4">
-                        Sign in / Sign up
-                    </h2>
                     <NTabs default-value="signin" size="large" type="segment" justify-content="space-evenly" animated>
                         <NTabPane name="signin" tab="Sign In">
                             <NForm class="text-left">
